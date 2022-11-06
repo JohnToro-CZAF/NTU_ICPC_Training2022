@@ -75,7 +75,7 @@ Node seg[4*maxn];
 
 void build(int id, int l, int r, vi& a){
     if(l == r){
-        seg[id] = a[l];
+        seg[id].mn = a[l];
         return;
     }
     int mid = (l+r)/2;
@@ -86,7 +86,7 @@ void build(int id, int l, int r, vi& a){
 
 void update(int id, int l, int r, int idx, int new_val){
     if(l == r && l == idx){
-        seg[id] = new_val;
+        seg[id].mn = new_val;
         return;
     }
     if(l > idx || r < idx){
