@@ -58,6 +58,7 @@ const ll MOD = 1e9 + 7; // 998244353
 const ll INF = 1e9;
 const char min_char = 'a';
 const double EPS = 1e-9;
+const double PI = 3.14159265358979323846
 
 
 void solve(){
