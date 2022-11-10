@@ -68,7 +68,7 @@ Node seg[4*maxn];
 
 void build(int node, int st, int en) {
   if (st == en) {
-    seg[node] = Node(0);
+    seg[node] = Node();
     return;
   }
   int mid = (st + en) / 2;
