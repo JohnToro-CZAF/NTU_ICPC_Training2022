@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 #include <algorithm>
 #include <array>
 #include <bitset>
@@ -15,14 +16,15 @@
 #include <set>
 #include <vector>
 #include <stack>
-#include <ext/pb_ds/assoc_container.hpp> // Common file
-#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
+// #include <ext/pb_ds/assoc_container.hpp> // Common file
+// #include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
 using namespace std;
 
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
 typedef vector<pii> vii;
+
 
 typedef vector<ll> vl;
 typedef pair<ll, ll> pll;
@@ -48,7 +50,7 @@ template<typename T>
 inline T gcd(T a, T b){while(b){b^=a^=b^=a%=b;} return a;}
 
 template<typename T>
-inline T lcm(T x, T y ){return x*y/gcd(x,y);}
+inline T lcm(T x, T y ){return x/gcd(x,y)*y;}
 
 template<typename T>
 inline T findLessPower(T base, T n){if(n==1){return 0;} T temp = log(n)/log(base); if(power(base, temp) == n){return temp-1;}else{return temp;}}
@@ -58,21 +60,20 @@ const ll MOD = 1e9 + 7; // 998244353
 const ll INF = 1e9;
 const char min_char = 'a';
 const double EPS = 1e-9;
-const double PI = 3.14159265358979323846
-
+const double PI = 3.14159265358979323846;
 
 void solve(){
-
+    
 }
+
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    int c = 1;
-    // cin >> c;
-    while(c--){
+    int T = 1;
+    // int T; cin >> T;
+    while(T--){
         solve();
     }
 }
-
