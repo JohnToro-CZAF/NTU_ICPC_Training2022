@@ -97,22 +97,42 @@ struct SegTree{
     seg[node] = seg[2*node] + seg[2*node+1];
   }
 
-  Node query(int l, int r){
+  T query(int l, int r){
     return query(1, 1, sz, l, r);
   }
 
-  Node query(int node, int st, int en, int l, int r){
+  T query(int node, int st, int en, int l, int r){
     if (lazy[node]){
       // seg[node].update(lazy[node]);
       if (st < en){lazy[2*node] += lazy[node], lazy[2*node+1] += lazy[node];}
       lazy[node] = 0;
     }
-    if ((en > r) || (st < l)) return T;
+    if ((st > r) || (en < l)) return T;
     if ((l <= st) && (en <= r)) return seg[node];
     int mid = (st + en) / 2;
     T q1 = query(2*node, st, mid, l, r);
     T q2 = query(2*node+1, mid+1, en, l, r);
     return (q1+q2);
+  }
+
+  int find(int val){
+    return find(1, 1, sz, val);
+  }
+
+  int find(int node, int st, int en, int val){
+    if (lazy[node]){
+      //seg[node].update(lazy[node])
+      if (st < en){
+        lazy[2*node] += lazy[node];
+        lazy[2*node+1] += lazy[node];
+        //dump lazy in 2*node and 2*node+1
+      }
+      lazy[node] = 0;
+    }
+    if (st == en) return 1;
+    int mid = (st + en) / 2;
+    if (seg[2 * node] >= val) return find(2 * node, st, mid, val);
+    else return mid - st + 1 + find(2 * node + 1, mid+1, en, val - seg[2 * node]);
   }
 };
 
