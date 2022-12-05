@@ -52,9 +52,9 @@ const char min_char = 'a';
 const int shift = 1e7 + 1;
 
 struct Node{
-    int mx, lazy;
-    Node(int a){mx = a; lazy = 0;}
-    Node(){mx = 0; lazy = 0;}
+    int mx;
+    Node(int a){mx = a;}
+    Node(){mx = 0;}
 };
 
 Node operator+(const Node& left, const Node& right){
